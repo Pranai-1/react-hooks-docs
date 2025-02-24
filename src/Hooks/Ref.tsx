@@ -2,7 +2,7 @@ import { useRef } from "react"
 
 export default function Ref(){
     const inputRef=useRef<HTMLInputElement>(null)
-    const childRef=useRef(null)
+    // const childRef=useRef(null)
     const textRef=useRef<HTMLParagraphElement>(null)
     console.log(inputRef)
 
