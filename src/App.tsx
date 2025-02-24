@@ -4,6 +4,7 @@ import State from "./Hooks/State";
 import CallBack from "./Hooks/CallbackAndMemo";
 import Ref from "./Hooks/Ref";
 import ActionState from "./Hooks/ActionState";
+import Id from "./Hooks/Id";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/callback" element={<CallBack />} />
         <Route path="/ref" element={<Ref />} />
         <Route path="/actionState" element={<ActionState />} />
+        <Route path="/id" element={<Id />} />
         {/* <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>
