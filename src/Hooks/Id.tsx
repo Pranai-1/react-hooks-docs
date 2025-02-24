@@ -1,7 +1,8 @@
-import { useId } from 'react';
+import { useId, useState } from 'react';
 
 function PasswordField() {
   const passwordHintId = useId();
+  const[emailError,setEmailError]=useState(false)
   return (
     <>
       <label>
@@ -14,6 +15,27 @@ function PasswordField() {
       <p id={passwordHintId}>
         The password should contain at least 18 characters
       </p>
+      <label htmlFor="email">Email:</label>
+<input
+  id="email"
+  type="email"
+  aria-describedby="emailHint emailError"
+  onChange={(e)=>{
+    if(e.target.value.endsWith("@gmail.com")){
+        setEmailError(false)
+    }else
+    setEmailError(true)
+  }}
+/>
+<p id="emailHint">Please enter your email address in the format: user@example.com.</p>
+{emailError ?
+    <p id="emailError">Your email address is invalid.</p>
+ :
+<p id="emailSuccess" style={{color:"green"}}>Correct Format</p>
+ }
+
+
+
     </>
   );
 }
@@ -57,3 +79,9 @@ export default function Id() {
 // React creates IDs in a specific order, then sends that HTML to the client. On hydration, React runs your components 
 // again to "attach" event handlers and state. If the component tree is exactly identical (same components, same order, same conditions),
 //   the client will generate the same IDs as the server, and everything works smoothly.
+
+
+//UseId checks with the parent,at whoch level this particular component is getting called and generate id based on that,
+//if hydration happens randomly then it will not affect its working because of this
+
+//
