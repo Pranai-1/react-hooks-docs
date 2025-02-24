@@ -38,7 +38,7 @@ export default function CallBack() {
 
   const primeNumbers=useMemo(()=>{return expensiveCalculation()},[expensiveCalculation])
 
-  const children = useMemo(() => <List numbers={primeNumbers} />, [primeNumbers]);
+  const children = useMemo(() => <List numbers={primeNumbers} />, [primeNumbers]);//we can memoize the jsx nodes as well
   return (
     <div>
       <p>Welcome to callback</p>
