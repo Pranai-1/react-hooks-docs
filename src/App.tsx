@@ -5,6 +5,8 @@ import CallBack from "./Hooks/CallbackAndMemo";
 import Ref from "./Hooks/Ref";
 import ActionState from "./Hooks/ActionState";
 import Id from "./Hooks/Id";
+import Transition from "./Hooks/Transition";
+import Imperative from "./Hooks/ImperativeHandle";
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/ref" element={<Ref />} />
         <Route path="/actionState" element={<ActionState />} />
         <Route path="/id" element={<Id />} />
+        <Route path="/transition" element={<Transition />} />
+        <Route path="/imperative" element={<Imperative />} />
         {/* <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>
