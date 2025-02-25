@@ -9,6 +9,7 @@ import Transition from "./Hooks/Transition";
 import Imperative from "./Hooks/ImperativeHandle";
 import Deferredvalue from "./Hooks/DeferredValue";
 import FormStatus from "./Hooks/FormStatus";
+import Fragment from "../src/Components/Fragment"
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/imperative" element={<Imperative />} />
         <Route path="/deferredValue" element={<Deferredvalue />} />
         <Route path="/formStatus" element={<FormStatus />} />
+        <Route path="/fragment" element={<Fragment />} />
         {/* <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>
