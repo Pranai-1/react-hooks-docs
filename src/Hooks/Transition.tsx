@@ -91,8 +91,8 @@
 //the normal component after th waiting time,this is because it will first render the expensive component and after that
 //normal component will get rendered due to the onClick.
 //To avoid this we need to use useTransition() hook
-//Deference between transiyion and suspense is that transition works at state level while suspense works at component level
-
+//Deference between transition and suspense is that transition works at state level while suspense works at component level
+//we mark the state update as a non priority by putting that particular state update inside a startTransition function
 
 import React, { useState, useTransition } from 'react';
 
