@@ -7,6 +7,7 @@ import ActionState from "./Hooks/ActionState";
 import Id from "./Hooks/Id";
 import Transition from "./Hooks/Transition";
 import Imperative from "./Hooks/ImperativeHandle";
+import Deferredvalue from "./Hooks/DeferredValue";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/id" element={<Id />} />
         <Route path="/transition" element={<Transition />} />
         <Route path="/imperative" element={<Imperative />} />
+        <Route path="/deferredValue" element={<Deferredvalue />} />
         {/* <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>
