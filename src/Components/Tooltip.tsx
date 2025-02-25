@@ -38,6 +38,7 @@ export default function RatingComponent() {
         </div>
       ))}
       <Tooltip id="rating-tooltip" place="top" />
+      
     </div>
   );
 }

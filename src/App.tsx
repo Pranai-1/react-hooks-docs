@@ -11,17 +11,26 @@ import Deferredvalue from "./Hooks/DeferredValue";
 import FormStatus from "./Hooks/FormStatus";
 import Fragment from "../src/Components/Fragment"
 import RatingComponent from "./Components/Tooltip";
+import Strict from "./Components/Strict";
 import { lazy, Suspense } from "react";
-const Strict = lazy(() => import("./Components/Strict"));
+const Lazy=lazy(()=>import("./Components/Lazy")) 
+
 function App() {
-  
+    // Preload function triggered on hover.
+    // const preloadLazyPage = () => {
+    //   // This triggers the dynamic import ahead of time.
+    //   import("./Components/Lazy");
+    // };
 
   return (
     <Router>
       <nav>
         <Link to="/">Home</Link> 
+        {/* <Link to="/lazy" onMouseEnter={preloadLazyPage}>
+          Go to Lazy Page
+        </Link> */}
       </nav>
-      <Suspense fallback={<div>Loading....</div>}>
+<Suspense fallback={<div>Loading lazy...</div>}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/state" element={<State />} />
@@ -35,15 +44,14 @@ function App() {
         <Route path="/formStatus" element={<FormStatus />} />
         <Route path="/fragment" element={<Fragment />} />
         <Route path="/tooltip" element={<RatingComponent />} />
-       
         <Route path="/strict" element={<Strict />} />
-       
-      
+        <Route path="/lazy" element={<Lazy />} />
         {/* <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>
       </Suspense>
     </Router>
+    
   )
 }
 
