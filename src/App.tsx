@@ -11,17 +11,17 @@ import Deferredvalue from "./Hooks/DeferredValue";
 import FormStatus from "./Hooks/FormStatus";
 import Fragment from "../src/Components/Fragment"
 import RatingComponent from "./Components/Tooltip";
-import Strict from "./Components/Strict";
-
+import { lazy, Suspense } from "react";
+const Strict = lazy(() => import("./Components/Strict"));
 function App() {
-
+  
 
   return (
     <Router>
       <nav>
         <Link to="/">Home</Link> 
       </nav>
-
+      <Suspense fallback={<div>Loading....</div>}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/state" element={<State />} />
@@ -35,10 +35,14 @@ function App() {
         <Route path="/formStatus" element={<FormStatus />} />
         <Route path="/fragment" element={<Fragment />} />
         <Route path="/tooltip" element={<RatingComponent />} />
+       
         <Route path="/strict" element={<Strict />} />
+       
+      
         {/* <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} /> */}
       </Routes>
+      </Suspense>
     </Router>
   )
 }
